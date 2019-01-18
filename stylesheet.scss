@@ -2,11 +2,14 @@
   CALENDAR MAIN STYLE GOES HERE
   CREATED BY ISHWOR
   FRONT END DEVELOPER
+  DESCRIPTION: I have dump all the var and usesfull class in same file for this small Project but it would be
+                nice if we make a seperate file for var and common useful class so on.
+                This is kind a basic styles for calendar but we could do lot more as we need.
 */
 
 
 /**
-DEFINE VAR IN HERE
+DEFINE VAR
 */
 
 $white: #FFF;
@@ -14,11 +17,15 @@ $black: #000;
 $lightGray: #EEE;
 $blue: blue;
 $orange: orange;
+$yellow: yellow;
+$lightGreen: #cbe382;
 
 /**************************************************/
 //Useful class:
 .no-padding { padding: 0; }
 .no-margin { margin: 0; }
+.weenkend { background: $yellow; }
+.weekday { background: $lightGreen; }
 
 /**************************************************/
 
@@ -42,14 +49,24 @@ table {
   width: 100%;
   height: auto;
 
-  thead{ border: 2px solid $black; }
-
-  th,td {
-    background: $white;
-    border: 1px solid $lightGray;
+  //mixin demo
+  @mixin row-set {
+    border: 2px solid $white;
     padding: 1rem;
     text-align: center;
   }
+
+  th {
+    @include row-set;
+    background: $black;
+    color: $white;
+  }
+
+  td {
+    @include row-set;
+    background: $lightGray;
+  }
+
 }//table end
 
 //FOOTER
@@ -68,16 +85,18 @@ table {
   .arrow-right {
     width: 0;
     height: 0;
-    border-top: 1.5rem solid transparent;
-    border-bottom: 1.5rem solid transparent;
-    border-left: 1.5rem solid $black;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 1rem solid $black;
+    cursor: pointer;
   }
   .arrow-left {
     width: 0;
     height: 0;
-    border-top: 1.5rem solid transparent;
-    border-bottom: 1.5rem solid transparent;
-    border-right:1.5rem solid $black;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-right:1rem solid $black;
+    cursor: pointer;
   }
 }//Bottom end
 
@@ -89,3 +108,17 @@ table {
   margin: 1rem auto;
   h5,h6, select { display: inline-block; }
 }
+
+//MAIN CALENDAR
+.today-date-selected {
+    background: $orange;
+    color: $white;
+    font-weight: bold;
+    animation: blinkCurrentDate 5s infinite ease-in-out;
+ }
+
+//ANIMATION
+ @keyframes blinkCurrentDate {
+   50% { background-color: $black; }
+   100% { background-color: $orange; }
+ }
