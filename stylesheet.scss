@@ -1,0 +1,91 @@
+/**
+  CALENDAR MAIN STYLE GOES HERE
+  CREATED BY ISHWOR
+  FRONT END DEVELOPER
+*/
+
+
+/**
+DEFINE VAR IN HERE
+*/
+
+$white: #FFF;
+$black: #000;
+$lightGray: #EEE;
+$blue: blue;
+$orange: orange;
+
+/**************************************************/
+//Useful class:
+.no-padding { padding: 0; }
+.no-margin { margin: 0; }
+
+/**************************************************/
+
+.main-wrapper {
+  background-color: $lightGray;
+  max-width: 32rem;
+  margin: 3rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+//HEADER
+header {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+}//header end
+
+//TABLE
+table {
+  width: 100%;
+  height: auto;
+
+  thead{ border: 2px solid $black; }
+
+  th,td {
+    background: $white;
+    border: 1px solid $lightGray;
+    padding: 1rem;
+    text-align: center;
+  }
+}//table end
+
+//FOOTER
+.bottom {
+  border: 1px solid $black;
+  background: $white;
+  padding: 1rem;
+  margin: 3rem 0 1rem 0;
+
+  .arrow-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 1.5rem solid transparent;
+    border-bottom: 1.5rem solid transparent;
+    border-left: 1.5rem solid $black;
+  }
+  .arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 1.5rem solid transparent;
+    border-bottom: 1.5rem solid transparent;
+    border-right:1.5rem solid $black;
+  }
+}//Bottom end
+
+//USER WRAPPER
+.user-wrapper {
+  display: flex;
+  justify-content: space-around;
+  max-width: 20rem;
+  margin: 1rem auto;
+  h5,h6, select { display: inline-block; }
+}
