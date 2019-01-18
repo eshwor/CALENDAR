@@ -74,7 +74,6 @@ function Calendar(month, year){
               cell.classList.add('weekday');
             }
 
-
             cell.appendChild(cellText);
             row.appendChild(cell);
             date++;

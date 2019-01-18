@@ -15,6 +15,7 @@ DEFINE VAR
 $white: #FFF;
 $black: #000;
 $lightGray: #EEE;
+$darkGray: #DDD;
 $blue: blue;
 $orange: orange;
 $yellow: yellow;
@@ -29,9 +30,14 @@ $lightGreen: #cbe382;
 
 /**************************************************/
 
+body {
+  animation: bodyAnimation 0.5s forwards ease-in;
+
+}
+
 .main-wrapper {
   background-color: $lightGray;
-  max-width: 32rem;
+  width: 32rem;
   margin: 3rem auto;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -71,7 +77,6 @@ table {
 
 //FOOTER
 .bottom {
-  border: 1px solid $black;
   background: $white;
   padding: 1rem;
   margin: 3rem 0 1rem 0;
@@ -102,11 +107,10 @@ table {
 
 //USER WRAPPER
 .user-wrapper {
-  display: flex;
-  justify-content: space-around;
-  max-width: 20rem;
-  margin: 1rem auto;
-  h5,h6, select { display: inline-block; }
+  select {
+     margin-left: 1rem;
+     height: 2rem;
+    }
 }
 
 //MAIN CALENDAR
@@ -121,4 +125,10 @@ table {
  @keyframes blinkCurrentDate {
    50% { background-color: $black; }
    100% { background-color: $orange; }
+ }
+
+ @keyframes bodyAnimation {
+   0% { opacity: 0; }
+   50% { opacity: 0.5; }
+   100% { opacity: 1; }
  }
